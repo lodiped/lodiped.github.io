@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+    font-family: "boxicons";
+    src: url("boxicons.ttf");
+}
+
+* {
+    font-family: 'Roboto Mono';
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 15rem;
+    transition: 150ms;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    background: #111;
+}
+
+.sidebar-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding-block: 10rem;
+    padding-left: 5rem;
+}
+
+.anchors {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+}
+.anchored {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    transform: scale(1.2) translateX(2rem);
+    transform-origin: left;
+    position: relative;
+}
+.anchored::before {
+    content: '';
+    position: absolute;
+    background-color: white;
+    left: -6.5rem;
+    top: 50%;
+    height: 2px;
+    width: 6rem;
+}
+.anchors:hover {
+    transform: scale(1.2);
+    position: relative;
+}
+.anchors::before {
+    content: '';
+    position: absolute;
+    background-color: white;
+    left: -4.5rem;
+    top: 50%;
+    height: 2px;
+    width: 4rem;
+    transform: scale(0);
+}
+.anchors:hover::before{
+    transition: transform 150ms;
+    transform-origin: right;
+    transform: scale(1);
+}
+
+.language-container {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    width: 150%;
+    margin-left: -5rem;
+}
+.english-button,
+.portugues-button {
+    cursor: pointer;
+    position: relative;
+    margin-left: .6rem;
+}
+.english-button a,
+.portugues-button a{
+    text-decoration: none;
+}
+.english-button:hover::before,
+.lang-active::before,
+.portugues-button:hover::before {
+    position: absolute;
+    content: '[';
+    left: -.6rem;
+}
+.english-button:hover::after,
+.lang-active::after,
+.portugues-button:hover::after {
+    position: absolute;
+    content: ']';
+}
+
+.title-style {
+    margin-top: 15rem;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: white;
+    max-width: clamp(400px,650px,700px);
+}
+.title-style p {
+    font-size: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.scroll-advice {
+    position: relative;
+    padding-block: 5rem;
+}
+.scroll-advice::before,
+.scroll-advice::after {
+    position: absolute;
+    content: '\ea4a';
+    font-family: 'boxicons';
+    animation: example .5s ease-in-out 0s infinite alternate;
+}
+.scroll-advice::before{
+    left: -1rem;
+}
+@keyframes example {
+    from {transform: translateY(-.2rem)}
+    to {transform: translateY(.2rem);} 
+}
+
+#main {
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+}
+
+.backcard {
+    border: 1px solid white;
+    max-width: clamp(400px,600px,700px);
+    height: clamp(350px,1vh,1080px);
+    position: relative;
+    transform-style: inherit;
+    padding-left: 10rem;
+    color: white;
+    margin-block-end: 15rem;
+    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.bottom-card-info{
+    padding-block: 3rem;
+}
+
+#card1::after {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\e91e \e940';
+    position: absolute;
+    right: 0;
+    transform: translateZ(-5px) translateX(20rem) scale(1.5);
+    opacity: .5;
+}
+
+#card2::after {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\ef15';
+    position: absolute;
+    left: 0;
+    transform: translateZ(5px) translateY(-10rem) rotate(45deg) scale(.5);
+    opacity: .5;
+}
+
+#card3::after {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\eaee';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateZ(4px) translateX(5rem) scale(.6) rotate(20deg);
+    opacity: .5;
+}
+
+#front-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateZ(2px) scale(.8);
+    border: 1px solid white;
+    padding: 3rem;
+}

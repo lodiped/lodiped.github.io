@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Magic Test</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div class="sidebar-container">
+        <a href="#title" id="titleAnchor" class="anchors anchored">
+            Title
+        </a>
+        <a href="#card1" id="firstAnchor" class="anchors">
+            3D Modeling
+        </a>
+        <a href="#card2" id="secondAnchor" class="anchors">
+            Graphic Design
+        </a>
+        <a href="#card3" id="thirdAnchor" class="anchors">
+            Front-end Web Design
+        </a>
+        <a href="#card4" id="fourthAnchor" class="anchors">
+            Card Four
+        </a>
+
+        <div class="language-container">
+            <div class="english-button"><a href="#en" data-reload>english</a></div>
+            <div class="portugues-button"><a href="#pt" data-reload>português</a></div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="main">
+            <div id="title" class="title-style" data-div>
+                <h1 id="langTitle">Hi, I'm Pedro lodi.</h1>
+                <p id="langAboutMe">I'm a Graphic Designer especializing in 3D modeling and Front-end design.</p>
+            </div>
+            <div id="langScroll" class="scroll-advice">
+                Scroll Down
+            </div>
+            <div id="card1" class="backcard" data-div>
+                <div class="title">
+                    <h3 id="langTitle1">3D MODELING</h3>
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, porro? Corporis deleniti explicabo pariatur cum iure suscipit voluptatem harum ratione, numquam, doloribus a obcaecati fugiat.
+                </div>
+                <div class="bottom-card-info">
+                    software: Blender 3D [icon].
+                </div>
+                <div id="front-card">
+                    image
+                </div>
+            </div>
+
+            <div id="card2" class="backcard" data-div>
+                <div class="title">
+                    <h3 id="langTitle2">GRAPHIC DESIGN</h3>
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, porro? Corporis deleniti explicabo pariatur cum iure suscipit voluptatem harum ratione, numquam, doloribus a obcaecati fugiat.
+                </div>
+                <div class="bottom-card-info">
+                    signature
+                </div>
+                <div id="front-card">
+                    image
+                </div>
+            </div>
+
+            <div id="card3" class="backcard" data-div>
+                <div class="title">
+                    <h3 id="langTitle3">FRONT-END WEB DESIGN</h3>
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, porro? Corporis deleniti explicabo pariatur cum iure suscipit voluptatem harum ratione, numquam, doloribus a obcaecati fugiat.
+                </div>
+                <div class="bottom-card-info">
+                    signature
+                </div>
+                <div id="front-card">
+                    image
+                </div>
+            </div>
+
+            <div id="card4" class="backcard" data-div>
+                <div class="title">
+                    <h3 id="langTitle4">FOURTH TITLE</h3>
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, porro? Corporis deleniti explicabo pariatur cum iure suscipit voluptatem harum ratione, numquam, doloribus a obcaecati fugiat.
+                </div>
+                <div class="bottom-card-info">
+                    signature
+                </div>
+                <div id="front-card">
+                    image
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
