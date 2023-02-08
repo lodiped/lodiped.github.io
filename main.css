@@ -132,7 +132,7 @@
     z-index: -1;
     background-image: url(images/logoWhite.svg);
     background-repeat: no-repeat;
-    opacity: .1;
+    opacity: .05;
 }
 .title-style p {
     font-size: 2rem;
@@ -174,8 +174,16 @@
 .underline-3d {
     position: relative;
 }
-.underline-web::after,
+.underline-web,
+.underline-gd,
+.underline-3d {
+    animation: fontcolor .5s ease-in-out 2s forwards;
+}
+@keyframes fontcolor {
+    to {color: black;}
+}
 .underline-name::after,
+.underline-web::after,
 .underline-gd::after,
 .underline-3d::before {
     position: absolute;
@@ -187,6 +195,14 @@
     left: 0;
     z-index: -1;
 }
+.underline-web::after,
+.underline-gd::after,
+.underline-3d::before {
+    height: 80%;
+    bottom: 0%;
+    background-color: rgb(127, 255, 208);
+    color: black;
+}
 .underline-name::after{
     animation: underline .5s ease-in-out .5s forwards;
 }
@@ -194,10 +210,10 @@
     animation: underline .5s ease-in-out 2s forwards;  
 }
 .underline-3d::before {
-    animation: underline .5s ease-in-out 3.5s forwards;  
+    animation: underline .5s ease-in-out 2s forwards;  
 }
 .underline-web::after {
-    animation: underline .5s ease-in-out 4.5s forwards;  
+    animation: underline .5s ease-in-out 2s forwards;  
 }
 @keyframes underline {
     to {width: 100%;}
@@ -228,31 +244,71 @@
 #card1::after {
     font-family: 'boxicons';
     font-size: 3rem;
-    content: '\e91e \e940';
+    content: '\eaee';
     position: absolute;
     right: 0;
-    transform: translateZ(-5px) translateX(20rem) scale(1.5);
+    transform: translateZ(-5px) translateX(20rem) scale(1.5) rotate(20deg);
+    opacity: .2;
+}
+
+#card1::before {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\ef23';
+    position: absolute;
+    left: 0;
+    transform: translateZ(5px) translateY(-20rem) scale(.5);
     opacity: .5;
 }
 
 #card2::after {
     font-family: 'boxicons';
     font-size: 3rem;
-    content: '\ef15';
+    content: '\ebb1';
     position: absolute;
     left: 0;
-    transform: translateZ(5px) translateY(-10rem) rotate(45deg) scale(.5);
+    transform: translateZ(5px) translateY(-10rem) scale(.4);
+    opacity: .5;
+}
+#card2::before {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\e90a';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateZ(4px) translateX(5rem) scale(.6);
     opacity: .5;
 }
 
 #card3::after {
     font-family: 'boxicons';
     font-size: 3rem;
-    content: '\eaee';
+    content: '\e91e  \e940  \edb9';
     position: absolute;
     right: 0;
     top: 0;
-    transform: translateZ(4px) translateX(5rem) scale(.6) rotate(20deg);
+    transform: translateZ(4px) translateX(5rem) scale(.6);
+    opacity: .5;
+}
+#card3::before {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\ec42';
+    position: absolute;
+    left: -30rem;
+    top: 0;
+    transform: translateZ(-5px)  scale(1.5) rotate(-20deg);
+    opacity: .2;
+}
+#card4::after {
+    font-family: 'boxicons';
+    font-size: 3rem;
+    content: '\ea21';
+    position: absolute;
+    right: 0;
+    top: -10rem;
+    transform: translateZ(4px) scale(.6);
     opacity: .5;
 }
 .image-1 {
