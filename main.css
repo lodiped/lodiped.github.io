@@ -5,7 +5,7 @@
     src: url("boxicons.ttf");
 }
 
-* {
+*, *::before, *::after {
     font-family: 'Roboto Mono';
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-padding-top: 15rem;
-    transition: 150ms;
+    transition: 200ms;
 }
 
 .wrapper {
@@ -75,7 +75,7 @@
     transform: scale(0);
 }
 .anchors:hover::before{
-    transition: transform 150ms;
+    transition: transform 200ms;
     transform-origin: right;
     transform: scale(1);
 }
@@ -118,6 +118,21 @@
     font-size: 3rem;
     color: white;
     max-width: clamp(400px,650px,700px);
+    position: relative;
+    transform-style: preserve-3d;
+}
+.title-style::after {
+    transform: rotate(45deg) translateZ(-25px) translateX(90rem) translateY(20rem) scale(3);
+    position: absolute;
+    content: '';
+    height: 25rem;
+    width: 25rem;
+    top: -10rem;
+    right: -10rem;
+    z-index: -1;
+    background-image: url(images/logoWhite.svg);
+    background-repeat: no-repeat;
+    opacity: .1;
 }
 .title-style p {
     font-size: 2rem;
@@ -150,6 +165,44 @@
     transform-style: preserve-3d;
 }
 
+#langAboutMe{
+    line-height: 3rem;
+}
+.underline-web,
+.underline-name,
+.underline-gd,
+.underline-3d {
+    position: relative;
+}
+.underline-web::after,
+.underline-name::after,
+.underline-gd::after,
+.underline-3d::before {
+    position: absolute;
+    content: '';
+    height: 10%;
+    width: 0%;
+    background-color: rgb(127, 255, 208);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.underline-name::after{
+    animation: underline .5s ease-in-out .5s forwards;
+}
+.underline-gd::after {
+    animation: underline .5s ease-in-out 2s forwards;  
+}
+.underline-3d::before {
+    animation: underline .5s ease-in-out 3.5s forwards;  
+}
+.underline-web::after {
+    animation: underline .5s ease-in-out 4.5s forwards;  
+}
+@keyframes underline {
+    to {width: 100%;}
+}
+
 .backcard {
     border: 1px solid white;
     max-width: clamp(400px,600px,700px);
@@ -162,6 +215,10 @@
     padding-bottom: 3rem;
     padding-top: 2.5rem;
     padding-right: 2.5rem;
+}
+.backcard h3 {
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .bottom-card-info{
@@ -198,12 +255,54 @@
     transform: translateZ(4px) translateX(5rem) scale(.6) rotate(20deg);
     opacity: .5;
 }
-
+.image-1 {
+    background-image: url(images/unsplash1.jpg);
+    position: relative;
+}
+.image-2 {
+    background-image: url(images/unsplash2.jpg);
+}
+.image-3 {
+    background-image: url(images/unsplash3.jpg);
+}
 #front-card {
+    width: 40%;
+    height: 50%;
     position: absolute;
-    left: 0;
+    left: -3rem;
     top: 0;
+    transform-origin: center;
     transform: translateZ(2px) scale(.8);
     border: 1px solid white;
     padding: 3rem;
+    background-size: 125%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#front-card:hover {
+    transform: translateZ(2px) scale(1);
+    background-size: 100%;
+}
+.image-1:hover::after{
+    content: 'artstation';
+}
+.image-2:hover::after{
+    content: 'behance';
+}
+.image-3:hover::after{
+    content: 'github';
+}
+.image-4:hover::after{
+    content: 'undefined';
+}
+.image-1:hover::after,
+.image-2:hover::after,
+.image-3:hover::after,
+.image-4:hover::after {
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    bottom: -1.5rem;
+    transform: scale(.8);
 }
