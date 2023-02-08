@@ -45,7 +45,7 @@ $(document).ready(function(){
 }) */
 
 //---------------------SECOND-METHOD-LANGUAGE:-------------------
-
+/* 
 let dataReload = document.querySelectorAll("[data-reload]");
 
 let language = {
@@ -108,4 +108,22 @@ for (i = 0; i <= dataReload.length; i++) {
     dataReload.onclick = function() {
         location.reload(true);
     }
+} */
+
+//----------------------------------rotation-test:--------------
+
+/* let frontCard1 = document.querySelector('.rotate-test');
+
+document.querySelector('.wrapper').addEventListener("scroll", () => {
+    let top = document.querySelector('.wrapper').pageYOffset / 10;
+    frontCard1.style.transform = 'rotate3d(0.5,0.5,0.5, ' + top + 'deg)';
+}); */
+
+//--------------------backcard-tranlate----------------
+
+const backCard = document.querySelectorAll('.backcard');
+const frontCard = document.querySelectorAll('#front-card');
+
+function translateBackcard() {
+    backCard.style.transform = "translateX(.5rem) scale(0.8)";
 }
