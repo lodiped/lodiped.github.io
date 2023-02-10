@@ -27,6 +27,14 @@
     background: #111;
 }
 
+.icon-anchor {
+    display:none;
+}
+
+.short-lang {
+    display: none;
+}
+
 .sidebar-container {
     position: fixed;
     display: flex;
@@ -94,7 +102,6 @@
 .portugues-button {
     cursor: pointer;
     position: relative;
-    margin-left: .6rem;
 }
 .english-button a,
 .portugues-button a{
@@ -403,4 +410,48 @@
 .js-icon:hover + .tooltip,
 .photoshop-icon:hover + .tooltip {
     opacity: 1;
+}
+
+@media (max-width: 1440px) {
+    .sidebar-container {
+        padding-left: 1rem;
+    }
+    .word-anchor,
+    .long-lang {
+        display: none;
+    }
+    .icon-anchor,
+    .short-lang {
+        display: block;
+    }
+    .anchors:hover{
+        transform-origin: left;
+    }
+    .english-button:hover::after,
+    .lang-active::after,
+    .portugues-button:hover::after {
+        top: 0;
+        right: -.3rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .backcard {
+        width: 400px;
+        padding-left: 1.5rem;
+        margin-top: 5rem;
+    }
+    #front-card {
+        width: 85%;
+        height: 50%;
+        top: -10rem;
+        left: auto;
+    }
+    .title-style {
+        font-size: 1.7rem;
+        width: 400px;
+    }
+    .title-style p {
+        font-size: 1rem;
+    }
 }
