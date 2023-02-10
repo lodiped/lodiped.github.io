@@ -12,8 +12,8 @@ const changeNav = (entries, observer) => {
 }
 
 const options = {
-    rootMargin: '-100px',
-    threshold: 1
+    rootMargin: '-100px 0px',
+    threshold: .5
 };
 
 const observer = new IntersectionObserver(changeNav, options);
@@ -124,6 +124,6 @@ document.querySelector('.wrapper').addEventListener("scroll", () => {
 const backCard = document.querySelectorAll('.backcard');
 const frontCard = document.querySelectorAll('#front-card');
 
-function translateBackcard() {
+/* function translateBackcard() {
     document.querySelectorAll('.backcard').style.transform = "translateX(.5rem) scale(0.8)";
-}
+} */
