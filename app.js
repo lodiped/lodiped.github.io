@@ -125,5 +125,5 @@ const backCard = document.querySelectorAll('.backcard');
 const frontCard = document.querySelectorAll('#front-card');
 
 function translateBackcard() {
-    backCard.style.transform = "translateX(.5rem) scale(0.8)";
+    document.querySelectorAll('.backcard').style.transform = "translateX(.5rem) scale(0.8)";
 }
