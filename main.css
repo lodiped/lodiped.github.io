@@ -142,7 +142,7 @@
     z-index: -1;
     background-image: url(images/logoWhite.svg);
     background-repeat: no-repeat;
-    opacity: .05;
+    opacity: .1;
 }
 .title-style p {
     font-size: 2rem;
@@ -153,6 +153,7 @@
 .scroll-advice {
     position: relative;
     padding-block: 5rem;
+    white-space: nowrap;
 }
 .scroll-advice::before,
 .scroll-advice::after {
@@ -470,6 +471,9 @@
     .title-style {
         font-size: 1.5rem;
         width: 80%;
+    }
+    #langAboutMe {
+        line-height: normal;
     }
     .title-style p {
         font-size: 1rem;
