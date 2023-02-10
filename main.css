@@ -249,7 +249,7 @@
     height: 2rem;
 }
 
-#card1::after {
+/*#card1::after {
     font-family: 'boxicons';
     font-size: 3rem;
     content: '\eaee';
@@ -318,7 +318,7 @@
     top: -10rem;
     transform: translateZ(4px) scale(.6);
     opacity: .5;
-}
+} */
 .image-1 {
     background-image: url(images/unsplash1.jpg);
     position: relative;
@@ -369,4 +369,38 @@
     left: 0;
     bottom: -1.5rem;
     transform: scale(.8);
+}
+
+.illustrator-icon,
+.blender-icon,
+.indesign-icon,
+.html-icon,
+.css-icon,
+.js-icon,
+.photoshop-icon
+.davinci-icon {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 14px;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.davinci-icon:hover + .tooltip,
+.illustrator-icon:hover + .tooltip,
+.blender-icon:hover + .tooltip,
+.indesign-icon:hover + .tooltip,
+.html-icon:hover + .tooltip,
+.css-icon:hover + .tooltip,
+.js-icon:hover + .tooltip,
+.photoshop-icon:hover + .tooltip {
+    opacity: 1;
 }
