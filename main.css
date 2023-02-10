@@ -252,6 +252,9 @@
     padding-bottom: 1.5rem; 
 }
 
+.bottom-card-info {
+    cursor: default;
+}
 .bottom-card-info img {
     padding-block: 0.1rem;
     height: 2rem;
@@ -356,6 +359,10 @@
     transform: translateZ(2px) scale(1);
     background-size: 100%;
 }
+#front-card:active {
+    transform: scale(.95) translateZ(2px);
+    opacity: .8;
+}
 .image-1:hover::after{
     content: 'artstation';
 }
@@ -401,7 +408,16 @@
     pointer-events: none;
     white-space: nowrap;
 }
-
+.davinci-icon:hover,
+.illustrator-icon:hover,
+.blender-icon:hover,
+.indesign-icon:hover,
+.html-icon:hover,
+.css-icon:hover,
+.js-icon:hover,
+.photoshop-icon:hover {
+    transform: scale(1.2);
+}
 .davinci-icon:hover + .tooltip,
 .illustrator-icon:hover + .tooltip,
 .blender-icon:hover + .tooltip,
@@ -413,7 +429,7 @@
     opacity: 1;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1360px) {
     .sidebar-container {
         padding-left: 1rem;
     }
@@ -470,11 +486,13 @@
         height: 3rem;
         background-color: rgba(0,0,0,.5);
         padding-block: 2rem;
-        padding-bottom: 4rem;
+        padding-bottom: 2rem;
     }
     .anchored {
-        transform: scale(1.2) translateY(2rem);
-
+        transform: scale(1.2) translateY(3.4rem);
+        background-color: rgba(0,0,0,.5);
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
     }
     .anchored::before {
         content: '';
@@ -505,5 +523,8 @@
     .portugues-button:hover::after {
         top: 0;
         right: -.6rem;
+    }
+    .spacer {
+        display: none;
     }
 }
