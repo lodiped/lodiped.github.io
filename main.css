@@ -122,7 +122,7 @@
 }
 
 .title-style {
-    margin-top: 15rem;
+    margin-top: 20vh;
     display: grid;
     place-items: center;
     font-size: 3rem;
@@ -151,9 +151,11 @@
 }
 
 .scroll-advice {
+    font-size: .8rem;
     position: relative;
     padding-block: 5rem;
     white-space: nowrap;
+    transform: translateY(-6rem);
 }
 .scroll-advice::before,
 .scroll-advice::after {
