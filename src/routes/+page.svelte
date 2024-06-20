@@ -9,6 +9,8 @@
 
 	/** @type {string} */
 	let lang;
+	/** @type {boolean} */
+	let langAuto = true;
 
 	const hello = [
 		'Hello',
@@ -109,6 +111,10 @@
 			el.style.transform = `rotateX(${angle * 1.5 - mouseAngle}deg)`;
 		});
 	};
+	function changeLang() {
+		langAuto = false;
+		lang === 'pt' ? (lang = 'en') : (lang = 'pt');
+	}
 
 	////////////////////////////////////////////////////////////////////////
 
@@ -119,9 +125,12 @@
 			window.addEventListener('scroll', updateAngleOnScroll);
 		}
 
-		if (navigator.language.slice(0, 2) === 'pt') {
-			lang = 'pt';
+		if (langAuto) {
+			if (navigator.language.slice(0, 2) === 'pt') {
+				lang = 'pt';
+			}
 		}
+
 		console.log(navigator.language);
 		return () => {
 			window.removeEventListener('mousemove', updateAngle);
@@ -131,6 +140,9 @@
 	});
 </script>
 
+<button on:click={changeLang} class="fixed text-white p-2 m-2 font-bold language-button"
+	>{#if lang === 'pt'}english{:else}português{/if}</button
+>
 <div class="flex flex-col justify-center items-center h-[700px]">
 	<p class="font-sans text-[5rem] text-white font-bold">
 		{currentHello}, {#if lang === 'pt'}<span>sou</span>{:else}<span>I'm</span>{/if} Pedro Lodi.
@@ -207,5 +219,8 @@
 	}
 	.bg-image {
 		filter: hue-rotate(var(--angle-bg));
+	}
+	.language-button:after {
+		content: '';
 	}
 </style>
