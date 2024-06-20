@@ -143,7 +143,7 @@
 <button on:click={changeLang} class="fixed text-white p-2 m-2 font-bold language-button"
 	>{#if lang === 'pt'}english{:else}português{/if}</button
 >
-<div class="flex flex-col justify-center items-center h-[700px]">
+<div class="flex flex-col justify-center items-center h-[600px]">
 	<p class="font-sans text-[5rem] text-white font-bold">
 		{currentHello}, {#if lang === 'pt'}<span>sou</span>{:else}<span>I'm</span>{/if} Pedro Lodi.
 	</p>
@@ -220,7 +220,18 @@
 	.bg-image {
 		filter: hue-rotate(var(--angle-bg));
 	}
-	.language-button:after {
+	.language-button {
+		display: flex;
+		justify-content: center;
+	}
+	.language-button::before {
+		position: absolute;
 		content: '';
+		bottom: 4px;
+		width: 55%;
+		background: white;
+		height: 3px;
+		border-radius: 99px;
+		filter: blur(3px);
 	}
 </style>
