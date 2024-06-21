@@ -227,11 +227,11 @@
 	.language-button::before {
 		position: absolute;
 		content: '';
-		bottom: 4px;
-		width: 55%;
+		bottom: 0px;
+		width: 25px;
 		background: white;
-		height: 3px;
+		height: 10px;
 		border-radius: 99px;
-		filter: blur(3px);
+		filter: blur(7px);
 	}
 </style>
