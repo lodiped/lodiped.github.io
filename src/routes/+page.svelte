@@ -140,21 +140,33 @@
 	});
 </script>
 
-<button on:click={changeLang} class="fixed text-white p-2 m-2 font-bold language-button"
-	>{#if lang === 'pt'}english{:else}português{/if}</button
->
-<div class="flex flex-col justify-center items-center h-[600px]">
-	<p class="font-sans text-[5rem] text-white font-bold">
-		{currentHello}, {#if lang === 'pt'}<span>sou</span>{:else}<span>I'm</span>{/if} Pedro Lodi.
+<div class="fixed w-full bg-gradient-to-b from-gray-950 h-20 z-auto">
+	<button on:click={changeLang} class="fixed text-white p-2 m-2 flex rounded-xl language-button"
+		>{#if lang === 'pt'}english{:else}português{/if}</button
+	>
+</div>
+
+<div class="flex flex-col justify-center items-center text-left h-[600px]">
+	<div
+		class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute h-[40rem] w-[40rem]"
+	></div>
+	<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold">
+		{currentHello},
+	</p>
+	<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold">
+		{#if lang === 'pt'}<span>sou</span>{:else}<span>I'm</span>{/if} Pedro Lodi.
 	</p>
 	{#if lang === 'pt'}
-		<p class="font-sans text-lg text-white">Sou um Designer Gráfico e Web Developer de Curitiba.</p>
+		<p class="hero-card text-lg text-white">
+			Designer Gráfico e Desenvolvedor Front-end de Curitiba.
+		</p>
 	{:else}
-		<p class="font-sans text-lg text-white">
-			I'm a Graphic Designer turned Web Developer from Brazil.
+		<p class="hero-card text-lg text-white">
+			Graphic Designer turned Front-end Developer from Brazil.
 		</p>
 	{/if}
 </div>
+
 <div class="flex p-16 justify-center lg:justify-between">
 	<section class="preserve3d hidden lg:flex">
 		<div class="container relative flex">
@@ -181,6 +193,7 @@
 		</div>
 	</section>
 </div>
+
 <div class="flex justify-center items-center h-[600px] font-sans text-[5rem] text-white"></div>
 
 <style>
@@ -191,7 +204,7 @@
 		box-sizing: border-box;
 	}
 	:global(body) {
-		background: #2b2b35;
+		background: rgb(5, 13, 32);
 	}
 	img {
 		max-height: var(--height);
@@ -199,7 +212,7 @@
 	}
 	.preserve3d {
 		transform-style: preserve-3d;
-		perspective: 70rem;
+		perspective: 60rem;
 		width: fit-content;
 		height: fit-content;
 	}
@@ -208,10 +221,10 @@
 		transform: rotateX(70deg);
 	}
 	.preserve3d:first-child {
-		transform: rotateY(20deg);
+		transform: rotateY(25deg);
 	}
 	.preserve3d:last-child {
-		transform: rotateY(-20deg);
+		transform: rotateY(-25deg);
 	}
 	.subcontainer {
 		position: absolute;
@@ -227,11 +240,16 @@
 	.language-button::before {
 		position: absolute;
 		content: '';
-		bottom: 0px;
-		width: 25px;
-		background: white;
-		height: 10px;
+		bottom: 20%;
+		width: 50%;
+		background: rgba(100, 250, 0, 0.5);
+		height: 50%;
 		border-radius: 99px;
-		filter: blur(7px);
+		filter: blur(6px);
+		z-index: -1;
+	}
+	.hero-card {
+		font-family: 'JetBrains Mono';
+		text-shadow: 0px 5px 10px black;
 	}
 </style>
