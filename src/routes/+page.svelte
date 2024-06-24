@@ -36,7 +36,9 @@
 		'வணக்கம்',
 		'مرحبًا'
 	];
+
 	let currentHello = 'Olá';
+
 	/** @type {Array<string>} negativeArray */
 	let negativeArray = [];
 
@@ -131,7 +133,6 @@
 			}
 		}
 
-		console.log(navigator.language);
 		return () => {
 			window.removeEventListener('mousemove', updateAngle);
 			window.removeEventListener('scroll', updateAngleOnScroll);
@@ -148,7 +149,7 @@
 
 <div class="flex flex-col justify-center items-center text-left h-[600px]">
 	<div
-		class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute h-[40rem] w-[40rem]"
+		class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute lg:h-[40rem] h-[20rem] w-[10rem] lg:w-[40rem]"
 	></div>
 	<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold">
 		{currentHello},
@@ -167,34 +168,41 @@
 	{/if}
 </div>
 
-<div class="flex p-16 justify-center lg:justify-between">
-	<section class="preserve3d hidden lg:flex">
-		<div class="container relative flex">
-			<img class="bg-image" alt="" src={bg1} />
-			<div class="subcontainer">
-				<img class="top-image" alt="" src={top1} />
+<div class="flex flex-col justify-center lg:justify-between mussiol bg-[size:95%] lg:bg-[size:35%]">
+	<div class="flex justify-center lg:justify-between mb-10 p-16">
+		<section class="preserve3d hidden lg:flex">
+			<div class="container relative flex">
+				<img class="bg-image" alt="" src={bg1} />
+				<div class="subcontainer">
+					<img class="top-image" alt="" src={top1} />
+				</div>
 			</div>
-		</div>
-	</section>
-	<section class="preserve3d">
-		<div class="container relative flex">
-			<img class="bg-image" alt="" src={bg2} />
-			<div class="subcontainer">
-				<img class="top-image" alt="" src={top2} />
+		</section>
+		<section class="preserve3d">
+			<div class="container relative flex">
+				<img class="bg-image" alt="" src={bg2} />
+				<div class="subcontainer">
+					<img class="top-image" alt="" src={top2} />
+				</div>
 			</div>
-		</div>
-	</section>
-	<section class="preserve3d hidden lg:flex">
-		<div class="container relative flex">
-			<img class="bg-image" alt="" src={bg3} />
-			<div class="subcontainer">
-				<img class="top-image" alt="" src={top3} />
+		</section>
+		<section class="preserve3d hidden lg:flex">
+			<div class="container relative flex">
+				<img class="bg-image" alt="" src={bg3} />
+				<div class="subcontainer">
+					<img class="top-image" alt="" src={top3} />
+				</div>
 			</div>
-		</div>
+		</section>
+	</div>
+	<section class="flex justify-center pb-10">
+		<p class="text-white text-lg">
+			Mussiol Atelier was a fashion branding project made for a friend.
+		</p>
 	</section>
 </div>
 
-<div class="flex justify-center items-center h-[600px] font-sans text-[5rem] text-white"></div>
+<div class="flex justify-center items-center h-[600px] font-sans text-[5rem] text-white">test</div>
 
 <style>
 	:root {
@@ -204,7 +212,7 @@
 		box-sizing: border-box;
 	}
 	:global(body) {
-		background: rgb(5, 13, 32);
+		background: #101010;
 	}
 	img {
 		max-height: var(--height);
@@ -251,5 +259,8 @@
 	.hero-card {
 		font-family: 'JetBrains Mono';
 		text-shadow: 0px 5px 10px black;
+	}
+	.mussiol {
+		background-image: url(../lib/assets/testwhite.png);
 	}
 </style>
