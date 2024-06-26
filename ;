@@ -154,8 +154,9 @@
 
 <div class="wrapper">
 	<div
-		class="flex flex-col relative preserve3dtitle justify-center items-center text-left h-[600px] mb-[10rem]"
+		class="flex flex-col relative preserve3dtitle justify-center items-center text-left h-[600px]"
 	>
+		<p class="text-white absolute translateclass">word</p>
 		<div
 			class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute lg:h-[40rem] h-[20rem] w-[10rem] lg:w-[40rem] theblob"
 		></div>
@@ -176,24 +177,24 @@
 		{/if}
 	</div>
 
-	<div class="flex flex-wrap preserve3dtitle justify-center bg-[size:95%] lg:bg-[size:35%] mussiol">
-		<section class="flex justify-center w-fit p-10 translateclass">
-			<p class="text-white hero-card text-xl lg:text-3xl font-bold">1. Mussiol Atelier</p>
-		</section>
-		<div class="flex justify-center w-full lg:justify-between mb-10 px-32">
+	<div
+		class="flex flex-col preserve3dtitle justify-center lg:justify-between bg-[size:95%] lg:bg-[size:35%]"
+	>
+		<div class="mussiol translateclassbg absolute z-[-1]"></div>
+		<div class="flex justify-center preserve3d perspective lg:justify-between mb-10 px-32">
 			<section class="perspective w-fit h-fit hidden lg:flex">
 				<div class="container relative flex">
-					<img class="bg-image" alt="" src={bg2} />
+					<img class="bg-image" alt="" src={bg1} />
 					<div class="subcontainer">
-						<img class="top-image" alt="" src={top2} />
+						<img class="top-image" alt="" src={top1} />
 					</div>
 				</div>
 			</section>
 			<section class="perspective w-fit h-fit">
 				<div class="container relative flex">
-					<img class="bg-image" alt="" src={bg1} />
+					<img class="bg-image" alt="" src={bg2} />
 					<div class="subcontainer">
-						<img class="top-image" alt="" src={top1} />
+						<img class="top-image" alt="" src={top2} />
 					</div>
 				</div>
 			</section>
@@ -235,9 +236,18 @@
 	.preserve3dtitle {
 		transform-style: preserve-3d;
 	}
+	.preserve3d {
+		transform-style: preserve-3d;
+	}
 	.container {
 		filter: drop-shadow(0px 15px 15px);
 		transform: rotateX(70deg);
+	}
+	.preserve3d:first-child {
+		transform: rotateY(25deg);
+	}
+	.preserve3d:last-child {
+		transform: rotateY(-25deg);
 	}
 	.subcontainer {
 		position: absolute;
@@ -265,15 +275,22 @@
 		font-family: 'JetBrains Mono';
 		text-shadow: 0px 5px 10px black;
 	}
+	.mussiol {
+		background-image: url(../lib/assets/testwhite.png);
+		background-color: white;
+		height: 300rem;
+		width: 300vw;
+		overflow-x: hidden;
+	}
 	.wrapper {
 		height: 100vh;
 		perspective: 60rem;
 		overflow-y: auto;
 	}
-	.translateclass {
-		transform: translateZ(300px);
+	.perspective {
+		perspective: 90rem;
 	}
-	.mussiol {
-		background-image: url(../lib/assets/testwhite.png);
+	.translateclass {
+		transform: translateZ(200px);
 	}
 </style>

@@ -3,3 +3,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.perspective {
+	@screen lg {
+		perspective: 90rem;
+	}
+	perspective: 30rem;
+}
