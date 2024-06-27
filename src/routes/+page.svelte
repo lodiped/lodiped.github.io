@@ -140,23 +140,25 @@
 
 		return () => {
 			window.removeEventListener('mousemove', updateAngle);
-			wrapper.removeEventListener('scroll', updateAngleOnScroll);
+			if (wrapper) {
+				wrapper.removeEventListener('scroll', updateAngleOnScroll);
+			}
 			clearInterval(intervalId);
 		};
 	});
 </script>
 
-<div class="fixed flex w-full bg-gradient-to-b from-black h-20 z-50">
+<div class="fixed flex gap-4 px-4 w-full bg-gradient-to-b from-black h-20 z-50">
 	<button
 		on:click={changeLang}
 		class={lang === 'pt'
-			? 'text-white p-2 m-2 flex rounded-xl'
-			: 'text-white p-2 m-2 flex rounded-xl opacity-30'}>português</button
+			? 'text-white my-2 flex rounded-xl'
+			: 'text-white my-2 flex rounded-xl opacity-20'}>português</button
 	>
 	<button
 		class={lang === 'pt'
-			? 'opacity-30 text-white p-2 m-2 flex rounded-xl'
-			: 'text-white p-2 m-2 flex rounded-xl'}
+			? 'opacity-20 text-white my-2 flex rounded-xl'
+			: 'text-white my-2 flex rounded-xl'}
 		on:click={changeLang}>english</button
 	>
 </div>
