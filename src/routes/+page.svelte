@@ -146,9 +146,18 @@
 	});
 </script>
 
-<div class="fixed w-full bg-gradient-to-b from-black h-20 z-50">
-	<button on:click={changeLang} class="fixed text-white p-2 m-2 flex rounded-xl language-button"
-		>{#if lang === 'pt'}english{:else}português{/if}</button
+<div class="fixed flex w-full bg-gradient-to-b from-black h-20 z-50">
+	<button
+		on:click={changeLang}
+		class={lang === 'pt'
+			? 'text-white p-2 m-2 flex rounded-xl'
+			: 'text-white p-2 m-2 flex rounded-xl opacity-30'}>português</button
+	>
+	<button
+		class={lang === 'pt'
+			? 'opacity-30 text-white p-2 m-2 flex rounded-xl'
+			: 'text-white p-2 m-2 flex rounded-xl'}
+		on:click={changeLang}>english</button
 	>
 </div>
 
@@ -208,7 +217,11 @@
 		</div>
 		<section class="flex justify-center pb-10">
 			<p class="text-white text-lg">
-				Mussiol Atelier was a fashion branding project made for a friend.
+				{#if lang === 'pt'}
+					Mussiol Atelier foi um projeto de branding de moda.
+				{:else}
+					Mussiol Atelier was something english
+				{/if}
 			</p>
 		</section>
 	</div>
@@ -245,21 +258,6 @@
 	}
 	.bg-image {
 		filter: hue-rotate(var(--angle-bg));
-	}
-	.language-button {
-		display: flex;
-		justify-content: center;
-	}
-	.language-button::before {
-		position: absolute;
-		content: '';
-		bottom: 20%;
-		width: 50%;
-		background: rgba(100, 250, 0, 0.5);
-		height: 50%;
-		border-radius: 99px;
-		filter: blur(6px);
-		z-index: -1;
 	}
 	.hero-card {
 		font-family: 'JetBrains Mono';
