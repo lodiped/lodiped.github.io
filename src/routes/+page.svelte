@@ -1,10 +1,4 @@
 <script>
-	import top1 from '$lib/assets/top1.png';
-	import top2 from '$lib/assets/top2.png';
-	import top3 from '$lib/assets/top3.png';
-	import bg1 from '$lib/assets/bg1.png';
-	import bg2 from '$lib/assets/bg2.png';
-	import bg3 from '$lib/assets/bg3.png';
 	import { onMount } from 'svelte';
 
 	/** @type {string} */
@@ -82,7 +76,6 @@
 	};
 
 	const updateAngleOnScroll = () => {
-		console.log('scroll trigger');
 		if (!wrapper) return;
 
 		const { clientHeight, scrollHeight, scrollTop } = wrapper;
@@ -165,23 +158,29 @@
 
 <div class="wrapper">
 	<div
-		class="flex flex-col relative preserve3dtitle justify-center items-center text-left h-[600px] mb-[10rem]"
+		class="flex flex-col relative preserve3dtitle justify-center items-start mx-[35rem] text-left h-[600px] mb-[10rem]"
 	>
 		<div
 			class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute lg:h-[40rem] h-[20rem] w-[10rem] lg:w-[40rem] theblob"
 		></div>
-		<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold">
+		<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold tracking-tighter">
 			{currentHello},
 		</p>
-		<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold">
-			{#if lang === 'pt'}<span>sou</span>{:else}<span>I'm</span>{/if} Pedro Lodi.
+		<p
+			class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold tracking-tighter leading-tight"
+		>
+			{#if lang === 'pt'}
+				<span>sou</span>
+			{:else}
+				<span>I'm</span>
+			{/if} Pedro Lodi.
 		</p>
 		{#if lang === 'pt'}
-			<p class="hero-card text-lg text-white">
+			<p class="hero-card text-lg text-white mt-8">
 				Designer Gráfico e Desenvolvedor Front-end de Curitiba.
 			</p>
 		{:else}
-			<p class="hero-card text-lg text-white">
+			<p class="hero-card text-lg text-white mt-8">
 				Graphic Designer turned Front-end Developer from Brazil.
 			</p>
 		{/if}
@@ -189,47 +188,58 @@
 
 	<div class="flex flex-wrap preserve3dtitle justify-center bg-[size:95%] lg:bg-[size:35%] mussiol">
 		<section class="flex justify-center w-fit p-10 translateclass">
-			<p class="text-white hero-card text-xl lg:text-3xl font-bold">1. Mussiol Atelier</p>
+			<p class="text-white hero-card text-xl lg:text-3xl font-bold">1. Design Gráfico</p>
 		</section>
 		<div class="flex justify-center w-full lg:justify-between mb-10 px-32">
 			<section class="perspective w-fit h-fit hidden lg:flex">
 				<div class="container relative flex">
-					<img class="bg-image" alt="" src={bg2} />
+					<img class="bg-image" alt="" src="bg2.png" />
 					<div class="subcontainer">
-						<img class="top-image" alt="" src={top2} />
+						<img class="top-image" alt="" src="top2.png" />
 					</div>
 				</div>
 			</section>
 			<section class="perspective w-fit h-fit">
 				<div class="container relative flex">
-					<img class="bg-image" alt="" src={bg1} />
+					<img class="bg-image" alt="" src="bg1.png" />
 					<div class="subcontainer">
-						<img class="top-image" alt="" src={top1} />
+						<img class="top-image" alt="" src="top1.png" />
 					</div>
 				</div>
 			</section>
 			<section class="perspective w-fit h-fit hidden lg:flex">
 				<div class="container relative flex">
-					<img class="bg-image" alt="" src={bg3} />
+					<img class="bg-image" alt="" src="bg3.png" />
 					<div class="subcontainer">
-						<img class="top-image" alt="" src={top3} />
+						<img class="top-image" alt="" src="top3.png" />
 					</div>
 				</div>
 			</section>
 		</div>
 		<section class="flex justify-center pb-10">
 			<p class="text-white text-lg">
-				{#if lang === 'pt'}
-					Mussiol Atelier foi um projeto de branding de moda.
-				{:else}
-					Mussiol Atelier was something english
-				{/if}
+				<!-- {#if lang === 'pt'} -->
+				<!-- 	Mussiol Atelier foi um projeto de branding de moda. -->
+				<!-- {:else} -->
+				<!-- 	Mussiol Atelier was something english -->
+				<!-- {/if} -->
 			</p>
 		</section>
 	</div>
 
-	<div class="flex justify-center items-center h-[600px] font-sans text-[5rem] text-white">
-		test
+	<div class="flex flex-col justify-center preserve3dtitle gap-10 items-center h-[800px] mt-20">
+		<div class="translateclass">
+			<p class="hero-card text-white lg:text-3xl text-xl">2. Fotografia</p>
+		</div>
+		<div class="perspective flex">
+			<img
+				class="rotate40 photoshadow"
+				src="photo8.jpg"
+				alt="photograph looking at the night sky from inside an abandoned factory"
+			/>
+			<img class="rotate30 photoshadow" src="photo8.jpg" alt="" />
+			<img class="photoshadow -translate-x-96" src="photo8.jpg" alt="" />
+		</div>
 	</div>
 </div>
 
@@ -254,6 +264,9 @@
 		filter: drop-shadow(0px 15px 15px);
 		transform: rotateX(70deg);
 	}
+	.photoshadow {
+		filter: drop-shadow(0px 15px 15px);
+	}
 	.subcontainer {
 		position: absolute;
 		left: 0;
@@ -275,5 +288,11 @@
 	}
 	.mussiol {
 		background-image: url(../lib/assets/testwhite.png);
+	}
+	.rotate30 {
+		transform: rotateY(40deg) translateX(-150px) scale(0.7);
+	}
+	.rotate40 {
+		transform: rotateY(70deg) translateX(150px) scale(0.7);
 	}
 </style>
