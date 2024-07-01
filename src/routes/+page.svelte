@@ -141,27 +141,27 @@
 	});
 </script>
 
-<div class="fixed flex gap-4 px-4 w-full bg-gradient-to-b from-black h-20 z-50">
+<div class="fixed text-sm flex gap-8 px-8 w-full bg-gradient-to-b from-black h-32 z-50">
 	<button
 		on:click={changeLang}
 		class={lang === 'pt'
-			? 'text-white my-2 flex rounded-xl'
-			: 'text-white my-2 flex rounded-xl opacity-20'}>português</button
+			? 'text-white my-8 flex h-fit'
+			: 'text-white my-8 flex h-fit opacity-20 hover:opacity-100'}>português</button
 	>
 	<button
 		class={lang === 'pt'
-			? 'opacity-20 text-white my-2 flex rounded-xl'
-			: 'text-white my-2 flex rounded-xl'}
+			? 'text-white my-8 flex h-fit opacity-20 hover:opacity-100'
+			: 'text-white my-8 flex h-fit'}
 		on:click={changeLang}>english</button
 	>
 </div>
 
 <div class="wrapper">
 	<div
-		class="flex flex-col relative preserve3dtitle justify-center items-start mx-[35rem] text-left h-[600px] mb-[10rem]"
+		class="flex flex-col relative preserve3dtitle justify-center items-start mx-[32%] text-left h-[600px] mb-[10rem]"
 	>
 		<div
-			class="z-[-1] top-[-5rem] bg-slate-500/35 blur-[100px] rounded-full absolute lg:h-[40rem] h-[20rem] w-[10rem] lg:w-[40rem] theblob"
+			class="z-[-1] top-[-5rem] bg-black blur-[100px] rounded-full absolute lg:h-[40rem] h-[20rem] w-[10rem] lg:w-[40rem] theblob"
 		></div>
 		<p class="hero-card text-[2.5rem] lg:text-[5rem] text-white font-bold tracking-tighter">
 			{currentHello},
@@ -251,7 +251,8 @@
 		box-sizing: border-box;
 	}
 	:global(body) {
-		background: #101010;
+		background: #050505;
+		font-family: 'JetBrains Mono';
 	}
 	img {
 		max-height: var(--height);
